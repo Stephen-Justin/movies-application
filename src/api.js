@@ -1,9 +1,10 @@
 module.exports = {
   getMovies: () => {
-    return fetch('/api/movies')
+    return fetch('/api/movies',
+        )
       .then(response => response.json());
   },
-  addMovies: () => {
+  addMovies: (data) => {
       return fetch('/api/movies', {
           method: 'POST',
           headers: {
