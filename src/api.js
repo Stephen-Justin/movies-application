@@ -13,5 +13,12 @@ module.exports = {
           body: JSON.stringify(data)
       })
           .then(response => response.json());
-  }
+  },
+    deleteMovies: (data) => {
+      return fetch('/api/movies/' + data, {
+          method: 'DELETE'
+      })
+          .then(response => response.json());
+
+    }
 };
