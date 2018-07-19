@@ -1,13 +1,14 @@
 /**
  * es6 modules and imports
  */
-import {getMovies, addMovies} from './api';
+import {getMovies, getMovieForEdit, addMovies} from './api';
 import sayHello from './hello';
-
 sayHello('World');
 
 const loader = $('#loading');
+const addMovie = $('#addMovie');
 const movieInfo = $('#movie-info');
+const editButton = $('.editButton');
 let movieCount = 0;
 
 function refreshMovies() {
@@ -17,7 +18,9 @@ function refreshMovies() {
             // console.log(`id#${id} - ${title} - rating: ${rating}`);
             movieCount = parseInt(id);
             console.log(id);
-            movieInfo.append(`<li> id#${id} - ${title} - rating: ${rating} <button id="delete">Delete</button></li>`);
+            movieInfo.append(`<li> id#${id} - ${title} - rating: ${rating} 
+<button id=${id} type="button" class="btn btn-primary editButton" 
+data-toggle="modal" data-target="#exampleModal">Edit</button></li>`);
 
         });
         loader.removeClass("visible");
@@ -34,7 +37,7 @@ function loadUp() {
     loader.addClass("visible")
 }
 
-$('#addMovie').click((e) => {
+addMovie.click((e) => {
     e.preventDefault();
     let data = {
         title: $('#movieTitle').val(),
@@ -45,6 +48,9 @@ $('#addMovie').click((e) => {
     refreshMovies();
 });
 
+editButton.click(() => {
+
+});
 
 $(document).ready(() => {
     loadUp();

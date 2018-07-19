@@ -4,6 +4,10 @@ module.exports = {
         )
       .then(response => response.json());
   },
+    getMovieForEdit: (id) => {
+      return fetch(`api/movies/${id}`)
+          .then(response => response.json());
+    },
   addMovies: (data) => {
       return fetch('/api/movies', {
           method: 'POST',
