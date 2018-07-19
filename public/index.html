@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8"/>
     <title>My Application</title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <form>
         <input id="movieTitle" type="text" name="movie-title" placeholder="Enter Your Movie Here">
@@ -16,7 +39,7 @@
             <option value="4">four</option>
             <option value="5">five</option>
         </select>
-        <button class="btn btn-large" id="addMovie" type="submit">Submit</button>
+        <button class="btn btn-primary" id="addMovie" type="submit">Submit</button>
         <div id="loading" class="loading invisible">
             <div class="loader"></div>
             <div class="loadText">LOADING</div>
@@ -26,6 +49,9 @@
         <ul id="movie-info"></ul>
     </div>
 </div>
+<script src="assets/jquery-2.2.4.js"></script>
+    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/bootstrap.bundle.min.js"></script>
 <script src="/main.js"></script>
 </body>
 </html>
