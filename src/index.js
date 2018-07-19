@@ -1,7 +1,6 @@
 /**
  * es6 modules and imports
  */
-import $ from 'jquery';
 import {getMovies, addMovies} from './api';
 import sayHello from './hello';
 
@@ -18,7 +17,7 @@ function refreshMovies() {
             // console.log(`id#${id} - ${title} - rating: ${rating}`);
             movieCount = parseInt(id);
             console.log(id);
-            movieInfo.append(`<li> id#${id} - ${title} - rating: ${rating} </li>`);
+            movieInfo.append(`<li> id#${id} - ${title} - rating: ${rating} <button id="delete">Delete</button></li>`);
 
         });
         loader.removeClass("visible");
