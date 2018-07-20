@@ -8,7 +8,7 @@ sayHello('World');
 const loader = $('#loading');
 const addMovie = $('#addMovie');
 const movieInfo = $('#movie-info');
-const editButton = $('.editButton');
+const deleteMovie = $('#deleteButton');
 let movieCount = 0;
 
 function refreshMovies() {
@@ -18,14 +18,24 @@ function refreshMovies() {
             // console.log(`id#${id} - ${title} - rating: ${rating}`);
             movieCount = parseInt(id);
             console.log(id);
-            movieInfo.append(`<li> id#${id} - ${title} - rating: ${rating} 
-<button id=${id} type="button" class="btn btn-primary editButton" 
+            movieInfo.append(`<li> id#${id} - ${title} - rating: ${rating}
+<button id=${id} type="button" class="btn btn-primary editButton"
 data-toggle="modal" data-target="#exampleModal">Edit</button></li>`);
 
         });
         loader.removeClass("visible");
         loader.addClass("invisible");
-    }).catch((error) => {
+    }).then(() => {
+        $('.editButton').click(function () {
+            let movie = getMovieForEdit(this.id);
+            $("#editMovieId").text(movie.id);
+            console.log(movie.id);
+            // movie.title
+            // movie.rating
+            console.log(getMovieForEdit(this.id));
+        });
+    })
+        .catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.');
         console.log(error);
     });
@@ -48,7 +58,10 @@ addMovie.click((e) => {
     refreshMovies();
 });
 
-editButton.click(() => {
+
+
+deleteMovie.click((id) => {
+
 
 });
 
