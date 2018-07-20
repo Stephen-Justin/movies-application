@@ -10,38 +10,42 @@
 </head>
 <body>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <label for="editMovieTitle" id="editMovieId" class="invisible"></label>
-                    <input type="text" id="editMovieTitle" class="form-control" placeholder="Movie Title">
-
-                    <select id=editMovieRating class="" name="rating">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" id="deleteButton" class="btn btn-secondary">Delete Movie</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+<form>
+    <div class="modal fade" id="editMovieModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="exampleModalLabel" class="modal-title">Edit/Delete Movie</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="editMovieTitle" id="editMovieId" class="display-none"></label>
+                    <div class="form-inline input-group">
+                        <label for="editMovieTitle">Label</label>
+                        <input type="text" id="editMovieTitle" class="form-control" placeholder="Movie Title">
+                        <select id=editMovieRating class="custom-select" style name="rating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="saveChanges" class="btn btn-primary" data-dismiss="modal">Save changes
+                    </button>
+                    <button type="button" id="deleteButton" class="btn btn-danger" data-dismiss="modal">Delete
+                        Movie
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</form>
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
@@ -63,8 +67,9 @@
         <div id="loading" class="loading invisible">
             <div class="loader"></div>
         </div>
-        <div>
-            <ul id="movie-info"></ul>
+        <div class="card-body">
+            <!--THIS IS WHERE THE MOVIES GO-->
+            <ul id="movie-info" class="list-group"></ul>
         </div>
     </div>
 </div>

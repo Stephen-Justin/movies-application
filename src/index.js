@@ -1,13 +1,15 @@
 /**
  * es6 modules and imports
  */
-import {getMovies, getMovieForEdit, addMovies} from './api';
+import {getMovies, getMovieForEdit, addMovies, deleteMovies, changeMovie} from './api';
 import sayHello from './hello';
+
 sayHello('World');
 
 const loader = $('#loading');
 const addMovie = $('#addMovie');
 const movieInfo = $('#movie-info');
+const saveChanges = $('#saveChanges');
 const deleteMovie = $('#deleteButton');
 let movieCount = 0;
 
@@ -18,24 +20,24 @@ function refreshMovies() {
             // console.log(`id#${id} - ${title} - rating: ${rating}`);
             movieCount = parseInt(id);
             console.log(id);
-            movieInfo.append(`<li> id#${id} - ${title} - rating: ${rating}
-<button id=${id} type="button" class="btn btn-primary editButton"
-data-toggle="modal" data-target="#exampleModal">Edit</button></li>`);
+            movieInfo.append(`<li class="list-group-item p-1"> id#${id} - ${title} - rating: ${rating}
+<button id=${id} type="button" class="btn-sm btn-primary editButton"
+data-toggle="modal" data-target="#editMovieModal">Edit</button></li>`);
 
         });
         loader.removeClass("visible");
         loader.addClass("invisible");
     }).then(() => {
         $('.editButton').click(function () {
-            let movie = getMovieForEdit(this.id);
-            $("#editMovieId").text(movie.id);
-            console.log(movie.id);
-            // movie.title
-            // movie.rating
-            console.log(getMovieForEdit(this.id));
+            const id = this.id;
+            getMovieForEdit(id)
+                .then(movie => {
+                    $("#editMovieId").text(movie.id);
+                    $("#editMovieTitle").val(movie.title);
+                    $("#editMovieRating").val(movie.rating);
+                })
         });
-    })
-        .catch((error) => {
+    }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.');
         console.log(error);
     });
@@ -59,10 +61,26 @@ addMovie.click((e) => {
 });
 
 
+deleteMovie.click(() => {
+    let deleteCheck = confirm("Are you sure you want to delete this movie?");
+    if (deleteCheck){
+    let id = $("#editMovieId").text();
+    loadUp();
+    deleteMovies(id);
+    refreshMovies();
+    }
+});
 
-deleteMovie.click((id) => {
-
-
+saveChanges.click((e) => {
+    e.preventDefault();
+    let data = {
+        title: $('#editMovieTitle').val(),
+        rating: $('#editMovieRating').val(),
+        id: $("#editMovieId").text()
+    };
+    loadUp();
+    changeMovie(data);
+    refreshMovies();
 });
 
 $(document).ready(() => {

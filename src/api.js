@@ -18,11 +18,20 @@ module.exports = {
         })
             .then(response => response.json());
     },
-    deleteMovies: (data) => {
-        return fetch('/api/movies/' + data, {
+    deleteMovies: (id) => {
+        return fetch(`/api/movies/${id}`, {
             method: 'DELETE'
         })
             .then(response => response.json());
 
+    },
+    changeMovie: (data) => {
+        return fetch(`/api/movies/${data.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
     }
 };
