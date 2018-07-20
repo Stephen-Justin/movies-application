@@ -10,7 +10,8 @@
 </head>
 <body>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -29,29 +30,34 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <form>
-        <input id="movieTitle" type="text" name="movie-title" placeholder="Enter Your Movie Here">
-        <select id=movieRating name="rating">
-            <option value="1">one</option>
-            <option value="2">two</option>
-            <option value="3">three</option>
-            <option value="4">four</option>
-            <option value="5">five</option>
-        </select>
-        <button class="btn btn-primary" id="addMovie" type="submit">Submit</button>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <form class="form-inline input-group justify-content-end">
+                    <input id="movieTitle" class="" type="text" name="movie-title" placeholder="Enter Your Movie Here">
+                    <select id=movieRating class="" name="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                <div class="input-group-append">
+                    <button class="btn btn-lg btn-primary" id="addMovie" type="button">Submit</button>
+                </div>
+            </form>
+        </div>
         <div id="loading" class="loading invisible">
             <div class="loader"></div>
-            <div class="loadText">LOADING</div>
         </div>
-    </form>
-    <div>
-        <ul id="movie-info"></ul>
+        <div>
+            <ul id="movie-info"></ul>
+        </div>
     </div>
 </div>
 <script src="assets/jquery-2.2.4.js"></script>
-    <script src="assets/bootstrap.min.js"></script>
-    <script src="assets/bootstrap.bundle.min.js"></script>
+<script src="assets/bootstrap.min.js"></script>
+<script src="assets/bootstrap.bundle.min.js"></script>
 <script src="/main.js"></script>
 </body>
 </html>
