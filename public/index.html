@@ -21,10 +21,22 @@
                 </button>
             </div>
             <div class="modal-body">
+                <form>
+                    <label for="editMovieTitle" id="editMovieId" class="invisible"></label>
+                    <input type="text" id="editMovieTitle" class="form-control" placeholder="Movie Title">
 
+                    <select id=editMovieRating class="" name="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="deleteButton" class="btn btn-secondary">Delete Movie</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
@@ -34,14 +46,15 @@
     <div class="card">
         <div class="card-header">
             <form class="form-inline input-group justify-content-end">
-                    <input id="movieTitle" class="" type="text" name="movie-title" placeholder="Enter Your Movie Here">
-                    <select id=movieRating class="" name="rating">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
+                <input id="movieTitle" class="form-control" type="text" name="movie-title"
+                       placeholder="Enter Your Movie Here">
+                <select id=movieRating class="" name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
                 <div class="input-group-append">
                     <button class="btn btn-lg btn-primary" id="addMovie" type="button">Submit</button>
                 </div>
@@ -58,6 +71,6 @@
 <script src="assets/jquery-2.2.4.js"></script>
 <script src="assets/bootstrap.min.js"></script>
 <script src="assets/bootstrap.bundle.min.js"></script>
-<script src="/main.js"></script>
+<script src="./main.js"></script>
 </body>
 </html>
