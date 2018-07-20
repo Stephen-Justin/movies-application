@@ -15,14 +15,32 @@ let movieCount = 0;
 
 function refreshMovies() {
     movieInfo.html(``);
+    let gemRating;
     getMovies().then((movies) => {
         movies.forEach(({title, rating, id}) => {
-            // console.log(`id#${id} - ${title} - rating: ${rating}`);
+            console.log(rating);
+            switch (rating) {
+                case "1":
+                    gemRating = `rating: <i class=" mx-2 fas fa-gem"></i><i class=" mx-2 far fa-gem"></i><i class=" mx-2 far fa-gem"></i><i class=" mx-2 far fa-gem"></i><i class=" mx-2 far fa-gem"></i>`;
+                    break;
+                case "2":
+                    gemRating = `rating: <i class=" mx-2 fas fa-gem"></i><i class=" mx-2 fas fa-gem"></i><i class=" mx-2 far fa-gem"></i><i class=" mx-2 far fa-gem"></i><i class=" mx-2 far fa-gem"></i>`;
+                    break;
+                case "3":
+                    gemRating = `rating: <i class=" mx-2 fas fa-gem"></i><i class=" mx-2 fas fa-gem"></i><i class=" mx-2 fas fa-gem"></i><i class=" mx-2 far fa-gem"></i><i class=" mx-2 far fa-gem"></i>`;
+                    break;
+                case "4":
+                    gemRating = `rating: <i class=" mx-2 fas fa-gem"></i><i class=" mx-2 fas fa-gem"></i><i class=" mx-2 fas fa-gem"></i><i class=" mx-2 fas fa-gem"></i><i class=" mx-2 far fa-gem"></i>`;
+                    break;
+                case "5":
+                    gemRating = `rating: <i class=" mx-2 fas fa-gem"></i><i class=" mx-2 fas fa-gem"></i><i class=" mx-2 fas fa-gem"></i><i class=" mx-2 fas fa-gem"></i><i class=" mx-2 fas fa-gem"></i>`;
+                    break;
+            }
             movieCount = parseInt(id);
             console.log(id);
-            movieInfo.append(`<li class="list-group-item p-1 bg-dark"> id#${id} - ${title} - rating: ${rating}
-<button id=${id} type="button" class="btn-sm btn-outline-info editButton"
-data-toggle="modal" data-target="#editMovieModal">Edit</button></li>`);
+            movieInfo.append(`<li class="list-group-item p-1 bg-dark">${title}<p class=" m-0 float-right">
+<button id=${id} type="button" class="btn-sm btn-outline-info editButton float-right"
+data-toggle="modal" data-target="#editMovieModal">Edit</button>${gemRating}</p></li>`);
 
         });
         loader.removeClass("visible");

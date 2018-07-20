@@ -2,7 +2,7 @@
   "movies": [
     {
       "title": "Casablanca",
-      "rating": "4",
+      "rating": "3",
       "id": 1
     },
     {
@@ -11,8 +11,8 @@
       "id": 2
     },
     {
-      "title": "yomama 2: electric boogaloo",
-      "rating": "4",
+      "title": "King Kong",
+      "rating": "1",
       "id": 3
     }
   ]

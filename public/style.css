@@ -5,20 +5,18 @@ html, body {
     background-image: url("0e9db60301a2619d0c8f7cfcbcaf4be6.jpg");
 }
 
-
 select {
-    /*min-width: 160px;*/
     max-width: 4em;
 }
+
 li {
     list-style: none;
 }
+
 .container-fluid {
-/*height: 100%;*/
-position: relative;
-    top: 30%;
-/*transform: translateY(-100%);*/
-text-align: center;
+    position: relative;
+    top: 15%;
+    text-align: center;
 
 }
 
@@ -44,7 +42,6 @@ text-align: center;
     }
 }
 
-
 .visible {
     display: block;
 }
@@ -55,4 +52,8 @@ text-align: center;
 
 .card-body {
     height: 100%;
+}
+
+.carousel-item {
+    max-height: 250px;
 }
