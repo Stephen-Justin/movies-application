@@ -20,8 +20,8 @@ function refreshMovies() {
             // console.log(`id#${id} - ${title} - rating: ${rating}`);
             movieCount = parseInt(id);
             console.log(id);
-            movieInfo.append(`<li class="list-group-item p-1"> id#${id} - ${title} - rating: ${rating}
-<button id=${id} type="button" class="btn-sm btn-primary editButton"
+            movieInfo.append(`<li class="list-group-item p-1 bg-dark"> id#${id} - ${title} - rating: ${rating}
+<button id=${id} type="button" class="btn-sm btn-outline-info editButton"
 data-toggle="modal" data-target="#editMovieModal">Edit</button></li>`);
 
         });
