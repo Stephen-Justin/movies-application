@@ -1,7 +1,11 @@
 html, body {
     height: 100%;
-    background-color: beige;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 19px;
+    background-image: url("0e9db60301a2619d0c8f7cfcbcaf4be6.jpg");
 }
+
+
 select {
     /*min-width: 160px;*/
     max-width: 4em;
@@ -15,15 +19,16 @@ position: relative;
     top: 30%;
 /*transform: translateY(-100%);*/
 text-align: center;
+
 }
 
 .loader {
     position: relative;
     left: 43%;
-    border-left: 16px solid red;
-    border-top: 16px solid white;
-    border-right: 16px solid blue;
-    border-bottom: 16px solid yellow;
+    border-left: 16px solid steelblue;
+    border-top: 16px solid purple;
+    border-right: 16px solid teal;
+    border-bottom: 16px solid black;
     border-radius: 50%;
     width: 120px;
     height: 120px;

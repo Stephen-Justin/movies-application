@@ -6,18 +6,20 @@
     <link rel="stylesheet" href="assets/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap-grid.min.css">
     <link rel="stylesheet" href="assets/bootstrap-reboot.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
 <!-- Modal -->
 <form>
+
     <div class="modal fade" id="editMovieModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content bg-dark text-white">
                 <div class="modal-header">
                     <h5 id="exampleModalLabel" class="modal-title">Edit/Delete Movie</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close btn-outline-info" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -36,9 +38,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" id="saveChanges" class="btn btn-primary" data-dismiss="modal">Save changes
+                    <button type="submit" id="saveChanges" class="btn btn-outline-info" data-dismiss="modal">Save changes
                     </button>
-                    <button type="button" id="deleteButton" class="btn btn-danger" data-dismiss="modal">Delete
+                    <button type="button" id="deleteButton" class="btn btn-outline-danger" data-dismiss="modal">Delete
                         Movie
                     </button>
                 </div>
@@ -47,7 +49,7 @@
     </div>
 </form>
 <div class="container-fluid">
-    <div class="card">
+    <div class="card bg-dark text-white">
         <div class="card-header">
             <form class="form-inline input-group justify-content-end">
                 <input id="movieTitle" class="form-control" type="text" name="movie-title"
@@ -60,14 +62,14 @@
                     <option value="5">5</option>
                 </select>
                 <div class="input-group-append">
-                    <button class="btn btn-lg btn-primary" id="addMovie" type="button">Submit</button>
+                    <button class="btn btn-lg btn-outline-info" id="addMovie" type="button">Submit</button>
                 </div>
             </form>
         </div>
         <div id="loading" class="loading invisible">
             <div class="loader"></div>
         </div>
-        <div class="card-body">
+        <div class="card-body bg-dark">
             <!--THIS IS WHERE THE MOVIES GO-->
             <ul id="movie-info" class="list-group"></ul>
         </div>
