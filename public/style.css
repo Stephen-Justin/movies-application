@@ -60,6 +60,6 @@ h1 {
 }
 
 .carousel-item {
-    max-height: 350px;
+    height: 80%;
     margin-bottom: 25px;
 }
